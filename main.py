@@ -34,13 +34,13 @@ def encodeit(iamges):
     return encodelist
 
 def extract(name):
-    try:
+    try: #CREATE A DATABASE IN YOUR MYSQL WORKBENCH AND MAKE A CONNECTION
         connection = mysql.connector.connect(host='localhost',
-                                            database='Students_Details',
-                                            user='root',
-                                            password='8990mini')
+                                            database='$DATABASE',
+                                            user='$USER',
+                                            password='$PASSWORD')
         cursor = connection.cursor()
-        sql_select_query = """select Roll_No from details where S_name = %s"""
+        sql_select_query = """select Roll_No from details where S_name = %s""" #CREATE DETAILS table in your database
         cursor.execute(sql_select_query,(name,))
         record = cursor.fetchall()
 
@@ -57,7 +57,7 @@ def insert(S_id,S_name,Arriaval_Time,Date):
                                             password='8990mini')
         cursor = connection.cursor()
         mySql_insert_query = """INSERT INTO date (S_Id, S_Name, Arriaval_Time,Date) 
-                                VALUES (%s, %s, %s,%s) """
+                                VALUES (%s, %s, %s,%s) """  #CREATE DATE table in your database
         record = (S_id,S_name,Arriaval_Time,Date)
         cursor.execute(mySql_insert_query, record)
         connection.commit()

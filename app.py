@@ -16,10 +16,11 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 # Connect to the database
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+#CREATE A DATABASE IN YOUR MYSQL WORKBENCH AND MAKE A CONNECTION
 conn = mysql.connector.connect(host='localhost',
-                                            database='Students_Details',
-                                            user='root',
-                                            password='8990mini')
+                                            database='$DATABASE',
+                                            user='$USER',
+                                            password='$PASSWORD')
 cursor = conn.cursor(buffered=True)
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -46,7 +47,7 @@ def index():
         user_input2 = request.form['roll']
 
         # Save the user input in the database
-        mySql_insert_query = """INSERT INTO details (Roll_No,S_Name) VALUES (%s,%s) """
+        mySql_insert_query = """INSERT INTO details (Roll_No,S_Name) VALUES (%s,%s) """ #CREATE DETAILS table in your database
         records = (user_input2,user_input1)
         cursor.execute(mySql_insert_query,records)
         conn.commit()
@@ -60,7 +61,7 @@ def index():
 @app.route('/home.html', methods=['GET','POST'])
 def home():
     date = request.form.get("date")
-    mySql_insert_query = """SELECT * FROM date WHERE Date= %s """
+    mySql_insert_query = """SELECT * FROM date WHERE Date= %s """ #CREATE DATE table in your database
     # record = date
     cursor.execute(mySql_insert_query,(date,))
     conn.commit()
