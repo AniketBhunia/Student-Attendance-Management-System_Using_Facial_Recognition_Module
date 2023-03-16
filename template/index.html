@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <link href = "static/styles.css" type = "text/css" rel = "stylesheet" />    
+    <h2>Sign Up</h2>
+    <!-- <script src="scripts/insert.js"></script>     -->
+    <form name = "form1" method="POST" action="" enctype="multipart/form-data">
+        <div class="form">
+            <div class="title">Welcome</div>
+            <div class="subtitle">Let's create your account!</div>
+            <div class="input-container ic1">
+              <input id="firstname" class="input" type="text" name="name" placeholder=" "  required/>
+              <div class="cut"></div>
+              <label for="firstname" class="placeholder">First name</label>
+            </div>
+            <div class="input-container ic2">
+              <input id="roll" class="input" type="number" name="roll" placeholder=" "  required/>
+              <div class="cut cut-short"></div>
+              <label for="roll no" class="placeholder">Roll No</>
+            </div>
+            <p style="color: red;">Select a file to upload(File Name Must be Your First Name)</p>
+            <input type="file" name="file" class="form-control" autocomplete="off" required>
+            <p>
+                {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                    <ul>
+                    {% for message in messages %}
+                      <li style="color: red;">{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                  {% endif %}
+                {% endwith %}
+            </p>
+            <button type="text" class="submit">Submit</button>
+            <!-- <button action="/home.html" type = "text" class ="button2">Get Attendance Details</button> -->
+          <!-- <form class=button2 action="/home.html">
+            <input type="submit" value="Get Attendance Details">
+          </form> -->
+        </div>
+        <!-- <button action="/home.html" type = "text" class ="button2">Get Attendance Details</button>            -->
+    </form>
+    <!-- <button action="/home.html" type = "text" class ="button2">Get Attendance Details</button> -->
+    <form name=form2 action="/home.html">
+      <div>
+      <input type="submit" value="Get Attendance Details" id ="button2">
+    </div>
+    </form>
+    <!-- <script src="scripts/insert.js"></script>    -->
+    
+</body>
+</html>
+

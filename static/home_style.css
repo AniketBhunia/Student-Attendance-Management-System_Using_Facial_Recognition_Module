@@ -1,0 +1,99 @@
+body {
+    align-items: center;
+    background-color: #c89666;
+    display: flex; 
+    justify-content: center;
+    height: 100vh;
+}
+.title {
+    color: rgb(2, 0, 0);
+    position: absolute;
+    font-family: "Roboto Mono",monospace;
+    font-size: 30px;
+    font-weight: 200;
+    margin-top: -490px;
+	margin-right: -20px; 
+}
+.submit{
+	position: absolute;
+	margin-left: 350px;
+	font-family: "Roboto Mono",monospace;	
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns:repeat(auto-fit, minmax(100px,1fr));
+    font-size: 16px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    /* color: rgb(18, 1, 1); */
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: -190px;
+    
+    /* margin-top: -350px; */
+/*   height: 50px; */
+/*   margin-top: 38px; */
+    outline: 0;
+}
+input[type="date"]{
+    background-color: #318deaa2;
+    padding: 15px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    margin-top: -170px;
+    font-family: "Roboto Mono",monospace;
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+::-webkit-calendar-picker-indicator{
+    background-color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 300px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.728);
+    position: relative;
+    margin-top: 150px;
+    overflow-y:scroll;
+    overflow-x: auto;
+    height:200px;
+    /* width: 100%; */
+    display:block;
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}

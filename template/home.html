@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Attendance Details</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="static/home_style.css">
+</head>
+<!-- <script type="text/javascript">
+    function makeTableScroll() {
+        // Constant retrieved from server-side via JSP
+        var maxRows = 5;
+
+        var table = document.getElementById('myTable');
+        var wrapper = table.parentNode;
+        var rowsInTable = table.rows.length;
+        var height = 0;
+        if (rowsInTable > maxRows) {
+            for (var i = 0; i < maxRows; i++) {
+                height += table.rows[i].clientHeight;
+            }
+            wrapper.style.height = height + "px";
+        }
+    } -->
+<body>
+    <!-- <link href = "static/home_style.css" type = "text/css" rel = "stylesheet" /> -->
+    <div class="title">Get Attendance Details</div>
+    <form action="/home.html" method='post'>
+	<div>
+    <input type="date" name="date" required />
+	</div>
+	<button type="text" class="submit" >Submit</button>
+    </form>
+    <table  class="styled-table" id="myTable" >
+        <thead>
+            <tr> 
+                <th>S_Id</th> 
+                <th>S_Name</th> 
+                <th>Arrival Time</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+                {% for i in range(count) %}  
+                    <tr> 
+                        <td>{{result1[i]}}</td> 
+                        <td>{{result2[i]}}</td>
+                        <td>{{result3[i]}}</td>
+                        <td>{{result4[i]}}</td> 
+                    </tr> 
+                {% endfor %} 
+    </table>
+</body>
+
+</html>

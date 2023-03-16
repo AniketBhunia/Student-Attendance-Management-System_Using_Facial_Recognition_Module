@@ -1,0 +1,6 @@
+note:
+Create a function in app.py that will encode the current picture uploaded by user and then call the function 
+in main.py and append it with encode list.
+
+
+A new button to get the attendance details of a particular date
