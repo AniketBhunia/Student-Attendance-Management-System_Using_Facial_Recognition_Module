@@ -34,6 +34,5 @@ By using this project , we can change this whole process into a automatic way.
 - **Step 3**: To show attendance details of a specific date,there is button in the web-page, clicking on which user will be redirected to `home.html` page , based on specific date, user can see the data tables.
 
 ## System Architecture
-![github svg](https://user-images.githubusercontent.com/72333107/225652477-1e2383c7-30fe-4e0b-bd7a-9bbc27eaed30.svg)
-
+<img src="https://user-images.githubusercontent.com/72333107/225652477-1e2383c7-30fe-4e0b-bd7a-9bbc27eaed30.svg" width="500">
 
